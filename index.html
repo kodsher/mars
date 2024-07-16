@@ -18,6 +18,7 @@
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -29,8 +30,8 @@
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             text-align: center;
-            max-width: 80%;
-            margin: auto;
+            width: 80%;
+            max-width: 600px;
         }
         .title {
             font-size: 36px;
@@ -58,12 +59,16 @@
 
         @media (max-width: 768px) {
             .title-box {
-                max-width: 90%;
+                width: 90%;
             }
         }
     </style>
 </head>
 <body>
+    <div class="title-box">
+        <h1 class="title">MarsCTOsol</h1> <!-- Title -->
+    </div>
+
     <canvas id="gameCanvas"></canvas>
     <img id="marsImg" src="mars.png" alt="Mars">
     
@@ -71,10 +76,6 @@
     <a class="twitter-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-twitter fa-2x"></i> <!-- Twitter icon -->
     </a>
-
-    <div class="title-box">
-        <h1 class="title">MarsCTOsol</h1> <!-- Title -->
-    </div>
 
     <script>
         // Initialize the canvas and its context
