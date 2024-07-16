@@ -22,6 +22,14 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            position: relative; /* Ensure positioning context for absolute elements */
+        }
+        .title-text {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            color: #fff;
+            font-size: 36px;
+            z-index: 100; /* Ensure text is above other elements */
         }
         .title-box {
             background-color: #000;
@@ -66,8 +74,10 @@
     </style>
 </head>
 <body>
+    <div class="title-text">MarsCTOsol</div> <!-- Title text at top -->
+    
     <div class="title-box">
-        <h1 class="title">MarsCTOsol</h1> <!-- Title -->
+        <h1 class="title">MarsCTOsol</h1> <!-- Title in box -->
     </div>
 
     <canvas id="gameCanvas"></canvas>
