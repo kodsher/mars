@@ -17,10 +17,30 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .title-box {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 80%;
+            margin: auto;
+        }
+        .title {
+            font-size: 36px;
+            margin: 0;
         }
         canvas {
             display: block;
             background-color: transparent; /* Transparent canvas background */
+            max-width: 100%;
+            height: auto;
         }
         #marsImg {
             position: absolute;
@@ -33,19 +53,17 @@
             color: #1da1f2; /* Twitter blue */
             text-decoration: none;
             font-size: 24px;
+            z-index: 10; /* Ensure Twitter link is above title box */
         }
-        .title {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #fff; /* White color for title */
-            font-size: 36px;
-            z-index: 100; /* Ensure title is above other elements */
+
+        @media (max-width: 768px) {
+            .title-box {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
 <body>
-    <h1 class="title">MarsCTOsol</h1> <!-- Title -->
     <canvas id="gameCanvas"></canvas>
     <img id="marsImg" src="mars.png" alt="Mars">
     
@@ -53,6 +71,10 @@
     <a class="twitter-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-twitter fa-2x"></i> <!-- Twitter icon -->
     </a>
+
+    <div class="title-box">
+        <h1 class="title">MarsCTOsol</h1> <!-- Title -->
+    </div>
 
     <script>
         // Initialize the canvas and its context
