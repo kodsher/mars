@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars in Space Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            background-color: #000;
+        }
+        #marsImg {
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <img id="marsImg" src="mars.png" alt="Mars">
+    <script>
+        // Initialize the canvas and its context
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas dimensions
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        // Mars properties
+        let mars = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            width: 160, // Original size was 40, now 4 times larger
+            height: 160, // Original size was 40, now 4 times larger
+            velocity: 3,
+            dx: 2,
+            dy: -2
+        };
+        
+        // Image element for Mars
+        const marsImg = document.getElementById('marsImg');
+        marsImg.style.width = `${mars.width}px`; // Adjusting image size
+        marsImg.style.height = `${mars.height}px`; // Adjusting image size
+        
+        // Update function
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+            
+            // Move Mars
+            mars.x += mars.dx;
+            mars.y += mars.dy;
+            
+            // Bounce off walls
+            if (mars.x + mars.width > canvas.width || mars.x < 0) {
+                mars.dx = -mars.dx;
+            }
+            if (mars.y + mars.height > canvas.height || mars.y < 0) {
+                mars.dy = -mars.dy;
+            }
+            
+            // Draw Mars image
+            ctx.drawImage(marsImg, mars.x, mars.y, mars.width, mars.height);
+            
+            requestAnimationFrame(update); // Loop update function
+        }
+        
+        update(); // Start the animation loop
+    </script>
+</body>
+</html>
