@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mars in Space Game</title>
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-fNFeTcqNDMQk49YEn+Q2Dt2+dsLWsF6AeQoFcA1tIVe2e7MyIEsXq77wHdF+O/LOwAeHyNQGJGfrR5NjRwA7FA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         body {
             margin: 0;
             overflow: hidden;
+            font-family: Arial, sans-serif;
         }
         canvas {
             display: block;
@@ -17,11 +21,25 @@
             position: absolute;
             display: none;
         }
+        .twitter-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #1da1f2; /* Twitter blue */
+            text-decoration: none;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
     <canvas id="gameCanvas"></canvas>
     <img id="marsImg" src="mars.png" alt="Mars">
+    
+    <!-- Twitter link -->
+    <a class="twitter-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-twitter"></i> Follow us on Twitter
+    </a>
+
     <script>
         // Initialize the canvas and its context
         const canvas = document.getElementById('gameCanvas');
@@ -35,8 +53,8 @@
         let mars = {
             x: canvas.width / 2,
             y: canvas.height / 2,
-            width: 160, // Original size was 40, now 4 times larger
-            height: 160, // Original size was 40, now 4 times larger
+            width: 80, // Original size was 40, now twice as big
+            height: 80, // Original size was 40, now twice as big
             velocity: 3,
             dx: 2,
             dy: -2
