@@ -36,8 +36,8 @@
     <img id="marsImg" src="mars.png" alt="Mars">
     
     <!-- Twitter link -->
-    <a class="twitter-link" href="https://x.com/MarsCTOsol" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-twitter"></i> Follow us on Twitter
+    <a class="twitter-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-twitter fa-2x"></i> <!-- Twitter icon -->
     </a>
 
     <script>
@@ -83,11 +83,6 @@
             
             // Draw Mars image
             ctx.drawImage(marsImg, mars.x, mars.y, mars.width, mars.height);
-            
-            // Draw text
-            ctx.fillStyle = '#fff'; // White color for text
-            ctx.font = '24px Arial'; // Font size and family
-            ctx.fillText('Mars to the Moon', 20, 40); // Text and position
             
             requestAnimationFrame(update); // Loop update function
         }
