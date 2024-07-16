@@ -66,6 +66,11 @@
             // Draw Mars image
             ctx.drawImage(marsImg, mars.x, mars.y, mars.width, mars.height);
             
+            // Draw text
+            ctx.fillStyle = '#fff'; // White color for text
+            ctx.font = '24px Arial'; // Font size and family
+            ctx.fillText('Mars to the Moon', 20, 40); // Text and position
+            
             requestAnimationFrame(update); // Loop update function
         }
         
