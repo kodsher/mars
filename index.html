@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mars in Space Game</title>
+    
     <!-- Font Awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-fNFeTcqNDMQk49YEn+Q2Dt2+dsLWsF6AeQoFcA1tIVe2e7MyIEsXq77wHdF+O/LOwAeHyNQGJGfrR5NjRwA7FA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -12,10 +13,14 @@
             margin: 0;
             overflow: hidden;
             font-family: Arial, sans-serif;
+            background-image: url('stars.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         canvas {
             display: block;
-            background-color: #000;
+            background-color: transparent; /* Transparent canvas background */
         }
         #marsImg {
             position: absolute;
